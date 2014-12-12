@@ -7,19 +7,20 @@ smtpObj = smtplib.SMTP('10.11.0.25', 25)
 sender = 'presidents_office@pcom.edu'
 receivers = 'marcwe@pcom.edu'
 
-message = """From: PCOM <president's_office@pcom.edu>
-To: marcwe <marcwe@pcom.edu>
-MIME-Version: 1.0
+part1 = """From: PCOM <president's_office@pcom.edu>"""
+part2 = """To: marcwe <marcwe@pcom.edu>"""
+part3 = """MIME-Version: 1.0
 Content-type: text/html
 Subject: SMTP HTML e-mail test
 
-This is an e-mail message to be sent in HTML format
 
-Please adjust your volume settings to hear sound.</span><br />
+
+Please adjust your volume settings to hear sound.<br />
 <br />
 <a href="http://dev.pcom.edu/communications/marcom/presidentscard_2014/holidaycard_external_2014.html" target="_blank"><img src="http://dev.pcom.edu/communications/marcom/presidentscard_2014/externalemail.png" width="425" height="406" /></a>
+<br><a>href ="mailto:president%27s_office.pcom.edu?subject=2014_card_remove">Please remove me from this list</a>
 """
-
+message = part1 + part2 + part3
 try:
    smtpObj = smtplib.SMTP('10.11.0.25', 25)
    smtpObj.sendmail(sender, receivers, message)         
