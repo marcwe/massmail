@@ -21,12 +21,14 @@ msgRoot.preamble = 'This is a multi-part message in MIME format.'
 msgAlternative = MIMEMultipart('alternative')
 msgRoot.attach(msgAlternative)
 
-msgText = MIMEText('This is the alternative plain text message.')
+#msgText = MIMEText('This is the alternative plain text message.')
+msgText = MIMEText('click on http://dev.pcom.edu/communications/marcom/presidentscard_2014/holidaycard_external_2014.html for the holiday greeting card')
 msgAlternative.attach(msgText)
 
 # We reference the image in the IMG SRC attribute by the ID we give it below
 #msgText = MIMEText('<b>Some <i>HTML</i> text</b> and an image.<br><img src="cid:image1"><br>Nifty!', 'html')
-msgText = MIMEText('<font color="blue">Please adjust your volume settings to hear sound.</font><br /><br /><a href="http://dev.pcom.edu/communications/marcom/presidentscard_2014/holidaycard_external_2014.html" target="_blank"><img src="cid:image1"" width="425" height="406" /></a><br><br><a href ="mailto:president%27s_office@pcom.edu?subject=2014_card_remove">Please remove me from this list</a>')msgAlternative.attach(msgText)
+msgText = MIMEText('<font color="blue">Please adjust your volume settings to hear sound.</font><br /><br /><a href="http://dev.pcom.edu/communications/marcom/presidentscard_2014/holidaycard_external_2014.html" target="_blank"><img src="cid:image1" width="425" height="406" /></a><br><br><a href ="mailto:president%27s_office@pcom.edu?subject=2014_card_remove">Please remove me from this list</a>', 'html')
+msgAlternative.attach(msgText)
 
 # This example assumes the image is in the current directory
 fp = open('externalemail.png', 'rb')
