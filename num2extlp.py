@@ -5,7 +5,7 @@ from email.MIMEMultipart import MIMEMultipart
 from email.MIMEText import MIMEText
 from email.MIMEImage import MIMEImage
 
-recips = ['marcwe@pcom.edu' , 'marcwepcom@yahoo.com' , 'marcwert@netscape.net', 'pcomalumni@gmail.com']
+recips = ['marcwe@pcom.edu' , 'marcwepcom@yahoo.com' , 'marcwert@netscape.net', 'pcomalumni@gmail.com', 'vinniel@pcom.edu' , 'PAMR@pcom.edu' , 'mikkiph@pcom.edu' ,'conniee@pcom.edu' , 'StephanieCoh@pcom.edu' , 'claudiaca@pcom.edu' ]
 
 
 # Define these once; use them twice!
@@ -28,12 +28,12 @@ for recip in recips:
 	msgRoot.attach(msgAlternative)
 
 	#msgText = MIMEText('This is the alternative plain text message.')
-	msgText = MIMEText('click on http://dev.pcom.edu/communications/marcom/presidentscard_2014/holidaycard_external_2014.html for the holiday greeting card')
+	msgText = MIMEText('click on http://goo.gl/LXXCtv for the holiday greeting card')
 	msgAlternative.attach(msgText)
 
 	# We reference the image in the IMG SRC attribute by the ID we give it below
 	#msgText = MIMEText('<b>Some <i>HTML</i> text</b> and an image.<br><img src="cid:image1"><br>Nifty!', 'html')
-	msgText = MIMEText('<font color="blue">Please adjust your volume settings to hear sound.</font><br /><br /><a href="http://dev.pcom.edu/communications/marcom/presidentscard_2014/holidaycard_external_2014.html" target="_blank"><img src="cid:image1" width="425" height="406" /></a><br><br><a href ="mailto:president%27s_office@pcom.edu?subject=2014_card_remove">Please remove me from this list</a>', 'html')
+	msgText = MIMEText('<font color="blue">Please adjust your volume settings to hear sound.</font><br /><br /><a href="http://goo.gl/LXXCtv" target="_blank"><img src="cid:image1" width="425" height="406" /></a><br><br><a href ="mailto:president%27s_office@pcom.edu?subject=2014_card_remove">Please remove me from this list</a>', 'html')
 	msgAlternative.attach(msgText)
 
 	# This example assumes the image is in the current directory
