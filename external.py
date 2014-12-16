@@ -7,7 +7,7 @@ smtpObj = smtplib.SMTP('10.11.0.25', 25)
 sender = 'presidents_office@pcom.edu'
 receivers = 'marcwe@pcom.edu'
 
-part1 = """From: PCOM <president's_office@pcom.edu>"""
+part1 = """From: PCOM President's Office<presidents_office@pcom.edu>"""
 part2 = """To: marcwe <""" + receivers + """>"""
 part3 = """MIME-Version: 1.0
 Content-type: text/html
