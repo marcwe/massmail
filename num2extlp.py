@@ -1,11 +1,13 @@
 # Send an HTML email with an embedded image and a plain text message for
 # email clients that don't want to display the HTML.
 
+import time
+
 from email.MIMEMultipart import MIMEMultipart
 from email.MIMEText import MIMEText
 from email.MIMEImage import MIMEImage
 
-recips = ['bademail@m.nor' 'marcwe@pcom.edu' , 'marcwepcom@yahoo.com' , 'marcwert@netscape.net', 'pcomalumni@gmail.com']
+recips = ['bademail@m.nor' , 'marcwe@pcom.edu' , 'marcwepcom@yahoo.com' , 'marcwert@netscape.net', 'pcomalumni@gmail.com' edu' ]
 
 
 # Define these once; use them twice!
@@ -14,7 +16,8 @@ strTo = 'marcwe@pcom.edu'
 
 for recip in recips:
 	strTo = recip
-	
+	print "%r" % (strTo)
+
 	# Create the root message and fill in the from, to, and subject headers
 	msgRoot = MIMEMultipart('related')
 	msgRoot['Subject'] = 'Holiday Greeting Card 2014'
@@ -53,3 +56,5 @@ for recip in recips:
 	#smtp.login('exampleuser', 'examplepass')
 	smtp.sendmail(strFrom, strTo, msgRoot.as_string())
 	smtp.quit()
+	# Wait for .1 seconds
+	time.sleep(.1)
